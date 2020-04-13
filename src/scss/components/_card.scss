@@ -1,0 +1,128 @@
+.card {
+  border: 1px solid rgba(32, 31, 31, 0.548);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  width: 18rem;
+  height: 25.5rem;
+  cursor: pointer;
+  background-color: white;
+  @include respond(tab-port) {
+    width: auto;
+}
+  @include respond(phone) {
+    height: 246px;
+    transition: height 0.5s ease;
+  }
+  // height: 30rem;
+  &__img-wrapper {
+    width: 100%;
+    height: 15rem;
+    border: 1px solid rgba(32, 31, 31, 0.548);
+    margin-bottom: 1rem;
+  }
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  &__feature-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    .card__feature {
+      &:not(:last-child) {
+        margin-right: 7px;
+        margin-bottom: 7px;
+      }
+      @include flexCenterColumn;
+      height: 3rem;
+      width: fit-content;
+      padding: 1rem;
+      min-width: 6rem;
+      border-radius: 0.6rem;
+      &--fire {
+        background-color: #FDDFDF;
+      }
+      &--grass {
+        background-color: #DEFDE0;
+      }
+      &--electric {
+        background-color: #FCF7DE;
+      }
+      &--water {
+        background-color: #DEF3FD;
+      }
+      &--ground {
+        background-color: #f4e7da;
+      }
+      &--rock {
+        background-color: #d5d5d4;
+      }
+      &--fairy {
+        background-color: #fceaff;
+      }
+      &--poison {
+        background-color: #98d7a5;
+      }
+      &--bug {
+        background-color: #f8d5a3;
+      }
+      &--dragon {
+        background-color: #97b3e6;
+      }
+      &--psychic {
+        background-color: #eaeda1;
+      }
+      &--flying {
+        background-color: #E6E0D4;
+      }
+      &--normal {
+        background-color: #F5F5F5;
+      }
+    }
+  }
+  &__mobile {
+    margin-top: 2.2rem;
+    width: 100%;
+    font-size: 1.37rem;
+    transition: transform 0.5s ease;
+    transform: translateY(-25rem);
+    z-index: -1;
+  }
+  &__desktop {
+    width: 100%;
+  }
+}
+.card.open  {
+  height: 100%;
+}
+.card.open  .card__mobile {
+  transform: translateY(0);
+  z-index: 1;
+}
+.detail-info {
+  border: 1px solid rgba(32, 31, 31, 0.548);
+  padding: 1rem;
+  &__img {
+    width: 100%;
+    height: 22rem;
+    object-fit: contain;
+    border: 1px solid rgba(32, 31, 31, 0.548);
+  }
+  font-size: 1.6rem;
+}
+.detail-table {
+  width: 100%;
+  font-size: inherit;
+  border: 1px solid rgba(80, 75, 75, 0.548);
+}
+td {
+  border: 1px solid rgba(80, 75, 75, 0.548);
+}
+.hidden {
+  opacity: 0;
+}
+.hide {
+  display: none;
+}

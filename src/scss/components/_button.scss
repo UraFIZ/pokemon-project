@@ -1,0 +1,18 @@
+.btn-load-more {
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 1rem;
+    background-color: #008cff;
+    color: white;
+    font-size: large;
+    border: 1px solid #008cff;
+    border-radius: 0.8rem;
+    @include flexCenterColumn;
+    height: 5rem;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+.btn-load-more:hover {
+    background-color: white;
+    color: #008cff;
+}

@@ -1,0 +1,68 @@
+.container {
+    max-width: $main-container;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+.header {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+%cards-row {
+    display: grid;
+    grid-column-gap: $gutter;
+  }
+.content-row {
+    .cards-row {
+        grid-area: cards;
+        margin-bottom: 3rem;
+    }
+    .detail-info-wrapper {
+        grid-area: details;
+    }
+    @extend %cards-row;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas: templateRow((7, "cards", 5, "details"));
+    @include respond(tab-port) {
+        grid-template-areas: templateRow((6, "cards", 6, "details"));
+    }
+    @include respond(phone) {
+        grid-template-areas: templateRow((12, "cards"));
+    }
+}
+.cards-wrapper {
+    @extend  %cards-row;
+    // border: 1px solid black;
+    grid-template-columns: repeat(auto-fill, minmax(18rem, auto));
+    grid-template-rows: auto;
+    justify-content: center;
+    grid-row-gap: $gutter;
+    @include respond(tab-port) {
+        grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    }
+    @include respond(phone) {
+        grid-template-rows: auto;
+    }
+    margin-bottom: 2.4rem;
+    
+}
+
+.detail-info-wrapper {
+    position: fixed;
+    left: 63%;
+    @extend  %cards-row;
+    grid-template-rows: 56rem;
+    grid-template-columns: minmax(30rem, auto);
+    @include respond(tab-port) {
+        grid-template-columns: minmax(19rem, 1fr);
+    }
+    @include respond(phone) {
+        display: none;
+    }
+    justify-content: center;
+    align-content: center;
+}
+
